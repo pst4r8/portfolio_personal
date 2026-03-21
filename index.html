@@ -33,7 +33,6 @@
 
   <!-- ─── FAVICON ───────────────────────────────────────────── -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="alternate icon" type="image/x-icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="perfil.jpeg" />
 
   <!-- ─── DATOS ESTRUCTURADOS (JSON-LD) ─────────────────────── -->
@@ -75,6 +74,7 @@
   <link rel="stylesheet" href="libs/fontawesome/css/all.min.css" />
 
   <!-- ─── AOS ANIMATIONS ───────────────────────────────────── -->
+  <link rel="stylesheet" href="libs/bootstrap/tooltip-only.css" />
   <link rel="stylesheet" href="libs/aos/aos.min.css" />
 
   <link rel="stylesheet" href="style.css" />
@@ -92,6 +92,7 @@
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
         <li><a href="#estudios">Estudios</a></li>
+        <li><a href="#github">GitHub</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -123,7 +124,7 @@
       <!-- Texto -->
       <div class="hero-content" data-aos="fade-right">
         <p class="hero-greeting">Hola, soy</p>
-        <h1 class="hero-name">Javier Sánchez López</h1>
+        <h1 class="hero-name" data-text="Javier Sánchez López">Javier Sánchez López</h1>
         <div class="hero-role">
           <span>Desarrollador </span>
           <span class="typing-wrapper">
@@ -337,6 +338,22 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GITHUB ACTIVITY ──────────────────────────────────── -->
+  <section class="section github-activity" id="github">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">04. GitHub</span>
+        <h2>Actividad reciente</h2>
+      </div>
+      <div class="github-graph-wrapper" data-aos="fade-up">
+        <div id="githubGraph" class="github-graph">
+          <p class="github-loading"><i class="fas fa-circle-notch fa-spin"></i> Cargando contribuciones...</p>
+        </div>
+        <div class="github-total" id="githubTotal"></div>
       </div>
     </div>
   </section>
@@ -677,6 +694,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="libs/aos/aos.min.js"></script>
   <script src="libs/sweetalert2/sweetalert2.all.min.js"></script>
   <script src="script.js"></script>

@@ -119,6 +119,40 @@ body {
 }
 
 a { color: inherit; text-decoration: none; transition: color var(--transition); }
+
+/* Underline animado — efecto wipe en links de contenido */
+.contact-item a,
+.contact-info a,
+.footer-link {
+  position: relative;
+  display: inline-block;
+}
+.contact-item a::before,
+.contact-item a::after,
+.contact-info a::before,
+.contact-info a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-item a::before,
+.contact-info a::before {
+  transform-origin: right;
+  transform: scaleX(0);
+}
+.contact-item a::after,
+.contact-info a::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.contact-item a:hover::before,
+.contact-info a:hover::before { transform-origin: left;  transform: scaleX(1); }
+.contact-item a:hover::after,
+.contact-info a:hover::after  { transform-origin: right; transform: scaleX(0); }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
@@ -133,9 +167,11 @@ input, textarea { font-family: inherit; }
 /* ═══════════════════════════════════════════════
    SCROLLBAR
 ═══════════════════════════════════════════════ */
+html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: var(--radius-pill); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dark); }
 
 /* ═══════════════════════════════════════════════
    BUTTONS
@@ -273,15 +309,21 @@ input, textarea { font-family: inherit; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   height: var(--nav-h);
-  transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+  background: rgba(10, 15, 12, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.08);
+  transition: background var(--transition), box-shadow var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(10,10,15,0.85);
-  backdrop-filter: blur(20px);
+  background: rgba(10, 15, 12, 0.88);
   box-shadow: 0 1px 0 var(--border);
 }
+[data-theme="light"] .navbar {
+  background: rgba(246, 253, 248, 0.6);
+}
 [data-theme="light"] .navbar.scrolled {
-  background: rgba(248,250,255,0.85);
+  background: rgba(246, 253, 248, 0.9);
 }
 .nav-container {
   max-width: 1200px;
@@ -434,6 +476,7 @@ input, textarea { font-family: inherit; }
   margin-bottom: 0.5rem;
 }
 .hero-name {
+  position: relative;
   font-size: clamp(3rem, 8vw, 5.5rem);
   font-weight: 900;
   line-height: 1.1;
@@ -442,6 +485,42 @@ input, textarea { font-family: inherit; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 1rem;
+}
+.hero-name::before,
+.hero-name::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+}
+.hero-name::before {
+  filter: drop-shadow(-2px 0 #ff00c1);
+  animation: glitch1 7s infinite;
+}
+.hero-name::after {
+  filter: drop-shadow(2px 0 #00fff9);
+  animation: glitch2 7s infinite;
+}
+@keyframes glitch1 {
+  0%, 90%, 100% { opacity: 0; clip-path: none; transform: none; }
+  91%  { opacity: 1; clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%); transform: translateX(-3px); }
+  92%  { opacity: 1; clip-path: polygon(0 55%, 100% 55%, 100% 70%, 0 70%); transform: translateX(3px); }
+  93%  { opacity: 1; clip-path: polygon(0 5%,  100% 5%,  100% 20%, 0 20%); transform: translateX(-2px); }
+  94%  { opacity: 0; }
+}
+@keyframes glitch2 {
+  0%, 92%, 100% { opacity: 0; clip-path: none; transform: none; }
+  93%  { opacity: 1; clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%); transform: translateX(3px); }
+  94%  { opacity: 1; clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%); transform: translateX(-3px); }
+  95%  { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-name::before, .hero-name::after { display: none; }
 }
 .hero-role {
   font-size: clamp(1.3rem, 3.5vw, 1.8rem);
@@ -1496,7 +1575,115 @@ input, textarea { font-family: inherit; }
 /* ═══════════════════════════════════════════════
    SELECTION
 ═══════════════════════════════════════════════ */
+/* Bootstrap tooltip variables override */
+:root {
+  --bs-body-bg: #fff;
+  --bs-emphasis-color: #000;
+  --bs-border-radius: 0.375rem;
+  --bs-font-sans-serif: 'Inter', sans-serif;
+}
+
 ::selection { background: var(--accent); color: #fff; }
+
+/* ═══════════════════════════════════════════════
+   GITHUB ACTIVITY GRAPH
+═══════════════════════════════════════════════ */
+.github-graph-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+.github-loading {
+  color: var(--text-faint);
+  text-align: center;
+  padding: 2rem 0;
+}
+.github-graph {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.github-grid {
+  display: flex;
+  gap: 3px;
+  width: max-content;
+}
+.github-week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.github-day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--bg-3);
+  cursor: default;
+  transition: transform 0.1s;
+}
+.github-day:hover { transform: scale(1.4); }
+.github-day[data-level="1"] { background: rgba(34,197,94,0.25); }
+.github-day[data-level="2"] { background: rgba(34,197,94,0.50); }
+.github-day[data-level="3"] { background: rgba(34,197,94,0.75); }
+.github-day[data-level="4"] { background: #22c55e; }
+
+/* Month labels */
+.github-months-row {
+  display: flex;
+  gap: 3px;
+  padding-left: 30px;
+  margin-bottom: 4px;
+  justify-content: center;
+}
+.github-month-lbl {
+  width: 12px;
+  font-size: 0.62rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+  overflow: visible;
+}
+
+/* Body: day labels + grid */
+.github-body {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  justify-content: center;
+}
+.github-day-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 1px;
+  flex-shrink: 0;
+}
+.github-day-labels span {
+  height: 12px;
+  font-size: 0.6rem;
+  color: var(--text-faint);
+  line-height: 12px;
+  width: 26px;
+  text-align: right;
+}
+
+/* Legend + total */
+.github-total {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+.github-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: var(--text-faint);
+}
 
 /* ═══════════════════════════════════════════════
    FAB SPEED DIAL

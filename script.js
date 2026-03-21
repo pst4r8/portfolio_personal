@@ -214,6 +214,101 @@ document.addEventListener('click', e => {
 });
 
 /* ═══════════════════════════════════════════════
+   GITHUB CONTRIBUTIONS GRAPH
+═══════════════════════════════════════════════ */
+(async () => {
+  const graphEl = document.getElementById('githubGraph');
+  const totalEl = document.getElementById('githubTotal');
+  if (!graphEl) return;
+
+  const MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const DAY_LABELS = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+
+  const [contribRes] = await Promise.allSettled([
+    fetch('https://github-contributions-api.jogruber.de/v4/JavierSA-dev?y=last')
+  ]);
+
+  if (contribRes.status !== 'fulfilled' || !contribRes.value.ok) {
+    graphEl.innerHTML = '<p class="github-loading">No se pudo cargar la actividad.</p>';
+    return;
+  }
+
+  const data  = await contribRes.value.json();
+  const days  = data.contributions;
+  const weeks = [];
+  for (let i = 0; i < days.length; i += 7) weeks.push(days.slice(i, i + 7));
+
+  // Etiquetas de meses
+  const monthsRow = document.createElement('div');
+  monthsRow.className = 'github-months-row';
+  let lastMonth = -1;
+  weeks.forEach(week => {
+    const m = new Date(week[0].date).getMonth();
+    const lbl = document.createElement('span');
+    lbl.className = 'github-month-lbl';
+    lbl.textContent = m !== lastMonth ? MONTHS[m] : '';
+    if (m !== lastMonth) lastMonth = m;
+    monthsRow.appendChild(lbl);
+  });
+
+  // Grid con etiquetas de días
+  const graphBody = document.createElement('div');
+  graphBody.className = 'github-body';
+
+  const dayLabelsEl = document.createElement('div');
+  dayLabelsEl.className = 'github-day-labels';
+  [0,1,2,3,4,5,6].forEach(i => {
+    const lbl = document.createElement('span');
+    lbl.textContent = (i % 2 === 1) ? DAY_LABELS[i] : '';
+    dayLabelsEl.appendChild(lbl);
+  });
+
+  const grid = document.createElement('div');
+  grid.className = 'github-grid';
+  weeks.forEach(week => {
+    const col = document.createElement('div');
+    col.className = 'github-week';
+    week.forEach(day => {
+      const cell = document.createElement('div');
+      cell.className = 'github-day';
+      cell.setAttribute('data-level', day.level);
+      const fecha = new Date(day.date + 'T00:00:00').toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+      cell.setAttribute('data-bs-toggle', 'tooltip');
+      cell.setAttribute('data-bs-placement', 'top');
+      cell.setAttribute('title', `${day.count} contribución${day.count !== 1 ? 'es' : ''} · ${fecha}`);
+      col.appendChild(cell);
+    });
+    grid.appendChild(col);
+  });
+
+  graphBody.appendChild(dayLabelsEl);
+  graphBody.appendChild(grid);
+
+  // Inicializar tooltips Bootstrap tras renderizar
+  requestAnimationFrame(() => {
+    graphEl.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+      new bootstrap.Tooltip(el, { trigger: 'hover' });
+    });
+  });
+
+  // Leyenda
+  const legend = document.createElement('div');
+  legend.className = 'github-legend';
+  legend.innerHTML = `
+    <span>Menos</span>
+    ${[0,1,2,3,4].map(l => `<div class="github-day" data-level="${l}" style="flex-shrink:0"></div>`).join('')}
+    <span>Más</span>
+  `;
+
+  graphEl.innerHTML = '';
+  graphEl.appendChild(monthsRow);
+  graphEl.appendChild(graphBody);
+
+  const total = Object.values(data.total).reduce((a, b) => a + b, 0);
+  totalEl.innerHTML = `<span>${total} contribuciones en el último año</span>${legend.outerHTML}`;
+})();
+
+/* ═══════════════════════════════════════════════
    CUSTOM CURSOR
 ═══════════════════════════════════════════════ */
 const cursorDot  = document.getElementById('cursor-dot');
