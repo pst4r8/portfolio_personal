@@ -449,7 +449,7 @@
           <div class="project-body">
             <span class="project-category">Full Stack &middot; Academias de idiomas</span>
             <h3>Gestión de Academia de Idiomas</h3>
-            <p>Las academias gestionaban alumnos, clases y documentación de forma manual. <strong>Desarrollé la plataforma completa</strong> con gestión de cursos, grupos y horarios, ficha de alumno con historial, firma digital, correos automáticos y sistema de roles diferenciado por perfil (admin, profesor, alumno).</p>
+            <p>Plataforma heredada con funcionalidades limitadas. <strong>Contribuí al rediseño y mejora continua</strong>: nuevas funcionalidades de gestión de cursos, grupos y horarios, firma digital, correos automáticos y sistema de roles por perfil (admin, profesor, alumno).</p>
             <div class="project-tech">
               <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Mailjet</span><span>JavaScript</span><span>Roles & permisos</span>
             </div>
@@ -464,7 +464,7 @@
           <div class="project-body">
             <span class="project-category">Full Stack &middot; Sector deportivo</span>
             <h3>Sistema de Reservas Deportivas</h3>
-            <p>Las instalaciones gestionaban reservas por teléfono y papel, sin visibilidad en tiempo real. <strong>Desarrollé el sistema completo</strong> de reservas online con panel de administración para gestionar espacios, tarifas y disponibilidad, accesible desde cualquier dispositivo.</p>
+            <p>Sistema de reservas legacy con limitaciones de escalabilidad. <strong>Migré y rediseñé la arquitectura</strong> hacia un sistema moderno modular con base de datos multi-tenant, mejorando el rendimiento y permitiendo gestionar múltiples instalaciones desde un único panel.</p>
             <div class="project-tech">
               <span>Laravel</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>AJAX</span>
             </div>
@@ -479,7 +479,7 @@
           <div class="project-body">
             <span class="project-category">Full Stack &middot; Sector deportivo / educativo</span>
             <h3>Pagos con Redsys y Suscripciones</h3>
-            <p>Las plataformas necesitaban cobrar cuotas y matrículas sin redirigir al usuario fuera de la app. <strong>Implementé la integración con Redsys desde cero</strong>: pagos únicos, suscripciones recurrentes y Bizum, reutilizada en varios proyectos de reservas y gestión educativa.</p>
+            <p>Funcionalidad transversal presente en múltiples proyectos de la empresa. Según el caso <strong>implementé la integración desde cero o mejoré integraciones existentes</strong>: pagos únicos, suscripciones recurrentes y Bizum con Redsys, adaptada a cada plataforma.</p>
             <div class="project-tech">
               <span>Laravel</span><span>Redsys</span><span>Bizum</span><span>PHP</span><span>MySQL</span>
             </div>
@@ -494,7 +494,7 @@
           <div class="project-body">
             <span class="project-category">Frontend &middot; Sector deportivo</span>
             <h3>Editor de Planos de Instalaciones</h3>
-            <p>El cliente necesitaba que los administradores pudieran definir visualmente sus instalaciones sin tocar código. <strong>Desarrollé el editor desde cero</strong> con Canvas/SVG: arrastrar, redimensionar y etiquetar espacios directamente sobre el plano, guardando la configuración en base de datos.</p>
+            <p>Funcionalidad desarrollada dentro de una plataforma de gestión de eventos. <strong>Desarrollé el editor desde cero</strong> con Canvas/SVG para distribuir mesas, añadir objetos con imágenes personalizadas y sentar invitados en sus sillas, guardando la configuración en base de datos.</p>
             <div class="project-tech">
               <span>JavaScript</span><span>Canvas / SVG</span><span>Laravel</span><span>MySQL</span>
             </div>
@@ -509,7 +509,7 @@
           <div class="project-body">
             <span class="project-category">Full Stack</span>
             <h3>Generador de Documentos e Informes</h3>
-            <p>Los administradores generaban listados, facturas e informes manualmente exportando datos. <strong>Automaticé la generación de documentos</strong> con plantillas configurables desde el panel: Excel con PhpSpreadsheet y PDF con DomPDF, reduciendo el trabajo manual a un solo clic.</p>
+            <p>Funcionalidad recurrente en la mayoría de proyectos de la empresa. <strong>Implementé y mantuve motores de generación de documentos</strong> adaptados a cada contexto: listados de alumnos, facturas, informes de ocupación — Excel con PhpSpreadsheet y PDF con DomPDF.</p>
             <div class="project-tech">
               <span>Laravel</span><span>PhpSpreadsheet</span><span>DomPDF</span><span>MySQL</span>
             </div>
@@ -527,6 +527,23 @@
             <p>Los sistemas de la empresa operaban de forma aislada, generando duplicidad de datos y trabajo manual. <strong>Conecté Holded, Mailjet y GravityForms</strong> con el backend Laravel, creando flujos automáticos: sincronización de clientes, envío de emails transaccionales y gestión de leads sin intervención humana.</p>
             <div class="project-tech">
               <span>Laravel</span><span>Holded API</span><span>Mailjet</span><span>GravityForms</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work" data-category="fullstack" data-aos="fade-up" data-aos-delay="300">
+          <div class="ai-badge"><i class="fas fa-robot"></i> IA integrada</div>
+          <div class="project-img">
+            <div class="project-placeholder p7"><i class="fas fa-paper-plane"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack &middot; Herramienta interna &middot; Taller Empresarial 2.0</span>
+            <h3>Sistema de Encuestas con IA</h3>
+            <p>La empresa necesitaba enviar encuestas masivas a clientes y analizar resultados de forma eficiente. <strong>Desarrollé el sistema completo</strong>: envío masivo por correo con filtros segmentados, generación de enlace público accesible con solo introducir un código (sin contraseña), diseño 100% responsive y estadísticas en tiempo real via API de Mailjet.</p>
+            <p style="margin-top:0.5rem">Integré un <strong>chatbot con IA</strong> capaz de analizar las respuestas de las encuestas en lenguaje natural y generar formularios automáticamente desde instrucciones en texto.</p>
+            <div class="project-tech">
+              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Mailjet API</span><span>JavaScript</span><span>IA / LLM</span>
             </div>
           </div>
         </div>

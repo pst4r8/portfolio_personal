@@ -1022,6 +1022,20 @@ html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
   border-color: var(--accent);
   box-shadow: 0 0 30px var(--accent-glow);
 }
+.ai-badge {
+  position: absolute;
+  top: 0.75rem; left: 0.75rem;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
 .featured-badge {
   position: absolute;
   top: 0.75rem; right: 0.75rem;
@@ -1053,6 +1067,7 @@ html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
 .p4 { background: linear-gradient(135deg, #1a0f2e, #2d1b4e); }
 .p5 { background: linear-gradient(135deg, #1a0a0a, #4e1b1b); }
 .p6 { background: linear-gradient(135deg, #0a1a1a, #1b3d3d); }
+.p7 { background: linear-gradient(135deg, #0f0a1a, #2d1a4e); }
 
 [data-theme="light"] .p2b { background: linear-gradient(135deg, #ede9fe, #a5b4fc); }
 [data-theme="light"] .p1 { background: linear-gradient(135deg, #dbeafe, #93c5fd); }
@@ -1061,6 +1076,7 @@ html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
 [data-theme="light"] .p4 { background: linear-gradient(135deg, #f3e8ff, #d8b4fe); }
 [data-theme="light"] .p5 { background: linear-gradient(135deg, #ffe4e6, #fda4af); }
 [data-theme="light"] .p6 { background: linear-gradient(135deg, #ccfbf1, #5eead4); }
+[data-theme="light"] .p7 { background: linear-gradient(135deg, #ede9fe, #c4b5fd); }
 [data-theme="light"] .project-placeholder { color: rgba(0,0,0,0.2); }
 
 .project-overlay {
