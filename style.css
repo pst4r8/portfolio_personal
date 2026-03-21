@@ -1333,6 +1333,14 @@ html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
   background: linear-gradient(135deg, #dcfce7, #86efac);
 }
 
+/* Slotix placeholder */
+.p-slotix {
+  background: linear-gradient(135deg, #0a0f1a, #0f2d5e);
+}
+[data-theme="light"] .p-slotix {
+  background: linear-gradient(135deg, #dbeafe, #60a5fa);
+}
+
 /* Highlight list inside project card */
 .project-highlights {
   display: flex;
