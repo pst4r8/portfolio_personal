@@ -560,6 +560,7 @@ html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
+  margin-top: 2rem;
 }
 .hero-socials a {
   width: 42px; height: 42px;
@@ -579,8 +580,10 @@ html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
 .hero-scroll {
   position: absolute;
   bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
 }
 .hero-scroll a {
   display: flex; align-items: center; justify-content: center;
