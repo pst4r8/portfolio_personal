@@ -980,6 +980,8 @@ html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
   color: var(--text-faint);
   text-align: center;
   line-height: 1.4;
+  max-width: 220px;
+  white-space: normal;
 }
 .origin-btn:hover {
   border-color: var(--accent);
