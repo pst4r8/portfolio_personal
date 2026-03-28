@@ -771,7 +771,8 @@ html { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
 .ts-icon > span:first-child,
 .next-icon > span:first-child,
 .laravel-icon > span:first-child,
-.expo-icon > span:first-child {
+.expo-icon > span:first-child,
+.avada-icon > span:first-child {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--accent);
