@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ─── SEO PRIMARIO ──────────────────────────────────────── -->
+  <title>Javier Sánchez López — Desarrollador Web Full Stack | Laravel · PHP · React Native</title>
+  <meta name="description" content="Desarrollador Web Full Stack con 3 años de experiencia en Laravel, PHP, MySQL y JavaScript. Especializado en automatización de procesos, integración de APIs, pasarelas de pago Redsys y desarrollo móvil con React Native y Expo. Córdoba, España." />
+  <meta name="keywords" content="desarrollador web, full stack, Laravel, PHP, MySQL, JavaScript, React Native, Expo, API REST, Redsys, pagos recurrentes, Mailjet, Holded, Córdoba, España, desarrollador freelance, programador web" />
+  <meta name="author" content="Javier Sánchez López" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#22c55e" />
+  <link rel="canonical" href="https://javiersanchezlopez.dev/" />
+
+  <!-- ─── OPEN GRAPH (Facebook, LinkedIn, WhatsApp…) ────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content="https://javiersanchezlopez.dev/" />
+  <meta property="og:site_name" content="Javier Sánchez López — Portfolio" />
+  <meta property="og:title" content="Javier Sánchez López — Desarrollador Web Full Stack" />
+  <meta property="og:description" content="Desarrollador Full Stack con experiencia en Laravel, PHP y React Native. Especializado en automatización de procesos, pagos con Redsys y desarrollo de apps móviles publicadas en Google Play y App Store." />
+  <meta property="og:image" content="https://javiersanchezlopez.dev/perfil.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Javier Sánchez López, Desarrollador Web Full Stack" />
+
+  <!-- ─── TWITTER CARD ──────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Javier Sánchez López — Desarrollador Web Full Stack" />
+  <meta name="twitter:description" content="Desarrollador Full Stack con experiencia en Laravel, PHP y React Native. Especializado en automatización de procesos y desarrollo móvil." />
+  <meta name="twitter:image" content="https://javiersanchezlopez.dev/perfil.jpeg" />
+
+  <!-- ─── FAVICON ───────────────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="perfil.jpeg" />
+
+  <!-- ─── DATOS ESTRUCTURADOS (JSON-LD) ─────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Javier Sánchez López",
+    "jobTitle": "Desarrollador Web Full Stack",
+    "description": "Desarrollador Full Stack con 3 años de experiencia en Laravel, PHP, MySQL, JavaScript y React Native. Especializado en automatización de procesos, integración de APIs y desarrollo móvil.",
+    "url": "https://javiersanchezlopez.dev/",
+    "email": "javisanchezlopezdev@gmail.com",
+    "telephone": "+34638354877",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Córdoba",
+      "addressCountry": "ES"
+    },
+    "sameAs": [
+      "https://github.com/JavierSA-dev",
+      "https://www.linkedin.com/in/javier-s%C3%A1nchez-l%C3%B3pez-615687227/"
+    ],
+    "knowsAbout": [
+      "Laravel", "PHP", "MySQL", "JavaScript", "HTML", "CSS",
+      "React Native", "Expo", "API REST", "Redsys", "Mailjet",
+      "Holded", "WordPress", "Git", "Automatización de procesos"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Taller Empresarial 2.0 S.L."
+    }
+  }
+  </script>
+
+  <!-- ─── FONTS ─────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="libs/fonts/fonts.css" />
+
+  <!-- ─── ICONS ─────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="libs/fontawesome/css/all.min.css" />
+
+  <!-- ─── AOS ANIMATIONS ───────────────────────────────────── -->
+  <link rel="stylesheet" href="libs/bootstrap/tooltip-only.css" />
+  <link rel="stylesheet" href="libs/aos/aos.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>JSL<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#estudios">Estudios</a></li>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <a href="curriculum_javi_dev.pdf" download class="btn-cv btn-cv-nav">
+          <i class="fas fa-download"></i>
+          <span>Descargar CV</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ──────────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="hero-layout">
+
+      <!-- Texto -->
+      <div class="hero-content" data-aos="fade-right">
+        <p class="hero-greeting">Hola, soy</p>
+        <h1 class="hero-name" data-text="Javier Sánchez López">Javier Sánchez López</h1>
+        <div class="hero-role">
+          <span>Desarrollador </span>
+          <span class="typing-wrapper">
+            <span class="typing" id="typing"></span>
+            <span class="cursor">|</span>
+          </span>
+        </div>
+        <p class="hero-desc">
+          Construyo aplicaciones web y móviles que funcionan en producción. 3 años desarrollando sistemas reales con <strong>Laravel, PHP y React Native</strong> — desde plataformas SaaS hasta apps publicadas en App Store y Google Play.
+        </p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn-primary">Ver proyectos <i class="fas fa-arrow-right"></i></a>
+          <a href="curriculum_javi_dev.pdf" download class="btn-cv btn-cv-hero">
+            <i class="fas fa-file-arrow-down"></i> Descargar CV
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/JavierSA-dev" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/javier-s%C3%A1nchez-l%C3%B3pez-615687227/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:javisanchezlopezdev@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Foto -->
+      <div class="hero-photo" data-aos="fade-left" data-aos-delay="200">
+        <div class="photo-ring">
+          <div class="photo-wrap">
+            <!-- Sustituye "perfil.jpeg" por el nombre real de tu imagen -->
+            <img src="perfil.jpeg" alt="Javier Sánchez López" id="heroImg"
+                 onerror="this.style.display='none'; document.getElementById('photoPlaceholder').style.display='flex';" />
+            <div class="photo-placeholder" id="photoPlaceholder">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+        </div>
+        <div class="photo-badge photo-badge-1">
+          <i class="fab fa-laravel"></i>
+          <span>Laravel</span>
+        </div>
+        <div class="photo-badge photo-badge-2">
+          <i class="fab fa-react"></i>
+          <span>React Native</span>
+        </div>
+        <div class="photo-badge photo-badge-3">
+          <i class="fas fa-plug"></i>
+          <span>API REST</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="hero-scroll" data-aos="fade-up" data-aos-delay="700">
+      <a href="#sobre-mi"><i class="fas fa-chevron-down"></i></a>
+    </div>
+  </section>
+
+  <!-- ─── SOBRE MÍ ───────────────────────────────────────────── -->
+  <section class="section sobre-mi" id="sobre-mi">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">01. Sobre mí</span>
+        <h2>¿Quién soy?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <p>Soy un desarrollador Full Stack organizado, colaborativo y con fuerte orientación al cliente, con experiencia construyendo aplicaciones web con <strong>Laravel, PHP y JavaScript</strong>. Me apasiona entender lo que necesita el cliente, traducirlo en soluciones reales y ponerlas en marcha.</p>
+          <p>He trabajado intensamente en <strong>automatización de procesos</strong>, integración con APIs externas como <strong>Redsys, Holded y Mailjet</strong>, sistemas de pago recurrentes, generación de documentos Excel y PDF, y planos interactivos con librerías JS. Recientemente he ampliado mi perfil hacia el <strong>desarrollo móvil con React Native y Expo</strong>.</p>
+          <p>También tengo experiencia creando <strong>webs visualmente cuidadas con WordPress y Avada</strong>, combinando funcionalidad y diseño para entregar resultados profesionales y atractivos al cliente.</p>
+          <p>Mi principal valor: soy <strong>proactivo y autónomo</strong>. Cuando me encuentro con algo nuevo, investigo, aprendo y lo resuelvo por mi cuenta, minimizando dependencias y optimizando procesos.</p>
+          <a href="curriculum_javi_dev.pdf" download class="btn-cv btn-cv-about">
+            <i class="fas fa-download"></i> Descargar CV completo
+          </a>
+        </div>
+        <div class="about-skills" data-aos="fade-left">
+          <h3>Stack tecnológico</h3>
+          <div class="skills-grid">
+            <div class="skill-item laravel-icon"><span>L</span><span>Laravel</span></div>
+            <div class="skill-item"><i class="fab fa-php"></i><span>PHP</span></div>
+            <div class="skill-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+            <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+            <div class="skill-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+            <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="skill-item"><i class="fab fa-react"></i><span>React Native</span></div>
+            <div class="skill-item expo-icon"><span>Ex</span><span>Expo</span></div>
+            <div class="skill-item"><i class="fas fa-plug"></i><span>API REST</span></div>
+            <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+            <div class="skill-item"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+            <div class="skill-item avada-icon"><span>A</span><span>Avada</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCIA ───────────────────────────────────────── -->
+  <section class="section experiencia" id="experiencia">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">02. Experiencia</span>
+        <h2>Trayectoria profesional</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Desarrollador de Aplicaciones Web</h3>
+                <p class="company">Taller Empresarial 2.0 S.L. &middot; Córdoba</p>
+              </div>
+              <span class="timeline-date">Jun. 2023 — Actualidad</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Desarrollo Full Stack de aplicaciones web con <strong>Laravel, PHP y plantillas Blade</strong></li>
+              <li>Diseño, creación y consumo de <strong>APIs REST</strong> propias e integración con servicios externos</li>
+              <li>Integración de <strong>pasarela de pago Redsys</strong>: pagos únicos, pagos recurrentes y pago con Bizum</li>
+              <li>Envío de correos transaccionales desde Laravel mediante <strong>Mailjet</strong></li>
+              <li>Conexión con <strong>Holded</strong> (ERP), GravityForms y otras APIs de terceros</li>
+              <li>Interfaces CRUD con tablas dinámicas mediante <strong>AJAX</strong>: paginación, filtrado avanzado y exportación a CSV</li>
+              <li>Generación de <strong>planos interactivos personalizados</strong> con librerías JavaScript</li>
+              <li>Generación de documentos <strong>Excel y PDF</strong> personalizados por cliente</li>
+              <li>Gestión de <strong>Cron Jobs</strong> y colas de trabajo en Laravel</li>
+              <li>Creación de páginas con <strong>WordPress y Avada</strong></li>
+              <li>Control de versiones con <strong>Git</strong>: ramas y pull requests</li>
+              <li>Últimos meses: desarrollo de <strong>apps móviles con React Native y Expo</strong></li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>JavaScript</span>
+              <span>Redsys</span><span>Mailjet</span><span>Holded</span><span>React Native</span>
+              <span>Expo</span><span>AJAX</span><span>Git</span><span>WordPress</span><span>Avada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Becario Desarrollo Web</h3>
+                <p class="company">AE Maderas / Onesta &middot; Córdoba</p>
+              </div>
+              <span class="timeline-date">Mar. 2021 — Jun. 2021</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Gestión de inventarios y soporte técnico informático</li>
+              <li>Desarrollo con <strong>Node.js y PostgreSQL</strong></li>
+              <li>Aplicación de lógica JavaScript en entornos reales</li>
+              <li>Resolución de problemas de software y hardware</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Node.js</span><span>PostgreSQL</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ESTUDIOS ──────────────────────────────────────────── -->
+  <section class="section estudios" id="estudios">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">03. Estudios</span>
+        <h2>Formación</h2>
+      </div>
+      <div class="edu-grid">
+
+        <div class="edu-card" data-aos="fade-up">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-content">
+            <span class="edu-date">Sep. 2021 — Jun. 2023</span>
+            <h3>Técnico Superior en Desarrollo de Aplicaciones Web</h3>
+            <p class="edu-place">IES Gran Capitán &middot; Córdoba</p>
+            <p class="edu-desc">Formación profesional de grado superior en DAW. Base sólida en desarrollo web full stack: HTML, CSS, JavaScript, PHP, Java, SQL, accesibilidad y despliegue de aplicaciones.</p>
+          </div>
+        </div>
+
+        <div class="edu-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="edu-icon"><i class="fas fa-network-wired"></i></div>
+          <div class="edu-content">
+            <span class="edu-date">Sep. 2019 — Jun. 2021</span>
+            <h3>Técnico en Sistemas Microinformáticos y Redes</h3>
+            <p class="edu-place">IES Inca Garcilaso &middot; Montilla, Córdoba</p>
+            <p class="edu-desc">Formación profesional de grado medio en SMR. Instalación, configuración y mantenimiento de sistemas informáticos y redes de comunicaciones.</p>
+          </div>
+        </div>
+
+        <div class="edu-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="edu-icon"><i class="fas fa-mobile-screen"></i></div>
+          <div class="edu-content">
+            <span class="edu-date">2024 — Actualidad</span>
+            <h3>Desarrollo Móvil con React Native y Expo</h3>
+            <p class="edu-place">Formación autodidacta + documentación oficial</p>
+            <p class="edu-desc">Aprendizaje práctico de React Native, Expo Router, notificaciones push, gestión de pagos in-app y publicación en App Store y Google Play.</p>
+          </div>
+        </div>
+
+        <div class="edu-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="edu-icon"><i class="fas fa-language"></i></div>
+          <div class="edu-content">
+            <span class="edu-date">2021</span>
+            <h3>Inglés — Nivel B1</h3>
+            <p class="edu-place">Certificación oficial</p>
+            <p class="edu-desc">Capacidad para leer documentación técnica en inglés, comprender tutoriales y comunicarse en entornos de trabajo internacionales.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GITHUB ACTIVITY ──────────────────────────────────── -->
+  <section class="section github-activity" id="github">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">04. GitHub</span>
+        <h2>Actividad reciente</h2>
+      </div>
+      <div class="github-graph-wrapper" data-aos="fade-up">
+        <div id="githubGraph" class="github-graph">
+          <p class="github-loading"><i class="fas fa-circle-notch fa-spin"></i> Cargando contribuciones...</p>
+        </div>
+        <div class="github-total" id="githubTotal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROYECTOS ─────────────────────────────────────────── -->
+  <section class="section proyectos" id="proyectos">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">04. Proyectos</span>
+        <h2>Experiencia técnica</h2>
+      </div>
+
+      <div class="origin-filter" data-aos="fade-up">
+        <div class="origin-btns">
+          <button class="origin-btn active" data-origin="all" data-sub="Ver todos los proyectos">
+            <i class="fas fa-table-cells-large"></i>
+            <span class="origin-btn-title">Todos</span>
+            <span class="origin-btn-sub">Ver todos los proyectos</span>
+          </button>
+          <button class="origin-btn" data-origin="work" data-sub="Proyectos en los que he contribuido completamente o parcialmente trabajando en Taller Empresarial 2.0">
+            <i class="fas fa-briefcase"></i>
+            <span class="origin-btn-title">Empresa</span>
+            <span class="origin-btn-sub">Proyectos en los que he contribuido completamente o parcialmente trabajando en Taller Empresarial 2.0</span>
+          </button>
+          <button class="origin-btn" data-origin="personal" data-sub="Proyectos propios fuera del trabajo">
+            <i class="fas fa-flask"></i>
+            <span class="origin-btn-title">Personal</span>
+            <span class="origin-btn-sub">Proyectos propios fuera del trabajo</span>
+          </button>
+        </div>
+        <p class="filter-hint" id="filterHint">Ver todos los proyectos</p>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- App de fichaje — publicada en stores, sin nombre de marca -->
+        <div class="project-card project-ticado featured col-span-3-md" data-category="mobile" data-aos="fade-up">
+          <div class="featured-badge">Principal proyecto</div>
+          <div class="ticado-inner">
+            <div class="ticado-img">
+              <div class="project-placeholder p-ticado">
+                <i class="fas fa-fingerprint"></i>
+              </div>
+              <div class="ticado-stores">
+                <div class="store-badge store-info">
+                  <i class="fab fa-google-play"></i> Publicada en Google Play
+                </div>
+                <div class="store-badge store-info store-apple">
+                  <i class="fab fa-apple"></i> Publicada en App Store
+                </div>
+              </div>
+            </div>
+            <div class="ticado-body">
+              <span class="project-category">Mobile + Full Stack &middot; SaaS laboral &middot; Taller Empresarial 2.0</span>
+              <h3>App de Fichaje Laboral</h3>
+              <p>La empresa necesitaba una solución propia de fichaje laboral con validez legal para sus clientes. <strong>Desarrollé íntegramente el sistema</strong>: backend multi-tenant en Laravel (cada cliente con su propia base de datos aislada) y la app móvil en React Native. Publicado en Google Play y App Store.</p>
+              <div class="ticado-features">
+                <div class="tf-item"><i class="fas fa-clock"></i> Fichaje de entrada, salida y pausas</div>
+                <div class="tf-item"><i class="fas fa-chart-bar"></i> Informes semanales y mensuales con validez legal</div>
+                <div class="tf-item"><i class="fas fa-triangle-exclamation"></i> Registro y gestión de incidencias laborales</div>
+                <div class="tf-item"><i class="fas fa-umbrella-beach"></i> Solicitud de vacaciones y control de ausencias</div>
+                <div class="tf-item"><i class="fas fa-building"></i> Arquitectura multi-tenant (BD por empresa)</div>
+                <div class="tf-item"><i class="fas fa-plug"></i> App conectada por API REST a backend Laravel</div>
+              </div>
+              <div class="project-tech">
+                <span>React Native</span><span>Expo</span><span>Laravel</span><span>PHP</span>
+                <span>MySQL</span><span>API REST</span><span>Multi-tenant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work featured" data-category="fullstack" data-aos="fade-up">
+          <div class="featured-badge">Destacado</div>
+          <div class="project-img">
+            <div class="project-placeholder p1"><i class="fas fa-graduation-cap"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack &middot; Sector educativo</span>
+            <h3>Plataforma de Gestión Educativa</h3>
+            <p>Los centros necesitaban digitalizar inscripciones, seguimiento de alumnos e informes sin depender de IT para cada cambio. <strong>Diseñé el modelo de datos y desarrollé el sistema completo</strong>, incluyendo un panel de administración configurable que permite adaptar el flujo sin tocar código.</p>
+            <div class="project-tech">
+              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Mailjet</span><span>AJAX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work" data-category="fullstack" data-aos="fade-up" data-aos-delay="50">
+          <div class="project-img">
+            <div class="project-placeholder p3"><i class="fas fa-language"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack &middot; Academias de idiomas</span>
+            <h3>Gestión de Academia de Idiomas</h3>
+            <p>Plataforma heredada con funcionalidades limitadas. <strong>Contribuí al rediseño y mejora continua</strong>: nuevas funcionalidades de gestión de cursos, grupos y horarios, firma digital, correos automáticos y sistema de roles por perfil (admin, profesor, alumno).</p>
+            <div class="project-tech">
+              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Mailjet</span><span>JavaScript</span><span>Roles & permisos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work" data-category="fullstack" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img">
+            <div class="project-placeholder p2"><i class="fas fa-calendar-check"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack &middot; Sector deportivo</span>
+            <h3>Sistema de Reservas Deportivas</h3>
+            <p>Sistema de reservas legacy con limitaciones de escalabilidad. <strong>Migré y rediseñé la arquitectura</strong> hacia un sistema moderno modular con base de datos multi-tenant, mejorando el rendimiento y permitiendo gestionar múltiples instalaciones desde un único panel.</p>
+            <div class="project-tech">
+              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>AJAX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work" data-category="fullstack" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img">
+            <div class="project-placeholder p2b"><i class="fas fa-credit-card"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack &middot; Sector deportivo / educativo</span>
+            <h3>Pagos con Redsys y Suscripciones</h3>
+            <p>Funcionalidad transversal presente en múltiples proyectos de la empresa. Según el caso <strong>implementé la integración desde cero o mejoré integraciones existentes</strong>: pagos únicos, suscripciones recurrentes y Bizum con Redsys, adaptada a cada plataforma.</p>
+            <div class="project-tech">
+              <span>Laravel</span><span>Redsys</span><span>Bizum</span><span>PHP</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work" data-category="frontend" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img">
+            <div class="project-placeholder p4"><i class="fas fa-map-location-dot"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Frontend &middot; Sector deportivo</span>
+            <h3>Editor de Planos de Instalaciones</h3>
+            <p>Funcionalidad desarrollada dentro de una plataforma de gestión de eventos. <strong>Desarrollé el editor desde cero</strong> con Canvas/SVG para distribuir mesas, añadir objetos con imágenes personalizadas y sentar invitados en sus sillas, guardando la configuración en base de datos.</p>
+            <div class="project-tech">
+              <span>JavaScript</span><span>Canvas / SVG</span><span>Laravel</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work" data-category="fullstack" data-aos="fade-up" data-aos-delay="250">
+          <div class="project-img">
+            <div class="project-placeholder p5"><i class="fas fa-file-invoice"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack</span>
+            <h3>Generador de Documentos e Informes</h3>
+            <p>Funcionalidad recurrente en la mayoría de proyectos de la empresa. <strong>Implementé y mantuve motores de generación de documentos</strong> adaptados a cada contexto: listados de alumnos, facturas, informes de ocupación — Excel con PhpSpreadsheet y PDF con DomPDF.</p>
+            <div class="project-tech">
+              <span>Laravel</span><span>PhpSpreadsheet</span><span>DomPDF</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work" data-category="fullstack" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-img">
+            <div class="project-placeholder p6"><i class="fas fa-link"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack &middot; Varios sectores</span>
+            <h3>Integraciones con Servicios Externos</h3>
+            <p>Los sistemas de la empresa operaban de forma aislada, generando duplicidad de datos y trabajo manual. <strong>Conecté Holded, Mailjet y GravityForms</strong> con el backend Laravel, creando flujos automáticos: sincronización de clientes, envío de emails transaccionales y gestión de leads sin intervención humana.</p>
+            <div class="project-tech">
+              <span>Laravel</span><span>Holded API</span><span>Mailjet</span><span>GravityForms</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card project-work" data-category="fullstack" data-aos="fade-up" data-aos-delay="300">
+          <div class="ai-badge"><i class="fas fa-robot"></i> IA integrada</div>
+          <div class="project-img">
+            <div class="project-placeholder p7"><i class="fas fa-paper-plane"></i></div>
+            <div class="work-lock"><i class="fas fa-lock"></i> Proyecto interno</div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack &middot; Herramienta interna &middot; Taller Empresarial 2.0</span>
+            <h3>Sistema de Encuestas con IA</h3>
+            <p>La empresa necesitaba enviar encuestas masivas a clientes y analizar resultados de forma eficiente. <strong>Desarrollé el sistema completo</strong>: envío masivo por correo con filtros segmentados, generación de enlace público accesible con solo introducir un código (sin contraseña), diseño 100% responsive y estadísticas en tiempo real via API de Mailjet.</p>
+            <p style="margin-top:0.5rem">Integré un <strong>chatbot con IA</strong> capaz de analizar las respuestas de las encuestas en lenguaje natural y generar formularios automáticamente desde instrucciones en texto.</p>
+            <div class="project-tech">
+              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Mailjet API</span><span>JavaScript</span><span>IA / LLM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Separador personal -->
+        <!-- Slotix — plataforma SaaS de reservas multi-tenant -->
+        <div class="project-card project-wip" data-category="personal" data-aos="fade-up" data-aos-delay="300">
+          <div class="wip-badge">
+            <i class="fas fa-hammer"></i> En desarrollo
+          </div>
+          <div class="project-img">
+            <div class="project-placeholder p-slotix"><i class="fas fa-calendar-check"></i></div>
+            <div class="project-overlay">
+              <a href="https://github.com/JavierSA-dev/slotix" target="_blank" rel="noopener" class="project-link" title="Repositorio GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Full Stack &middot; Personal &middot; SaaS</span>
+            <h3>Slotix — SaaS de Reservas Multi-Tenant</h3>
+            <p>Sistema de gestión de reservas online para cualquier tipo de negocio. <strong>Diseñé y desarrollé la arquitectura completa</strong>: base de datos central compartida y BD aislada por empresa, panel de administración con calendario interactivo y vista pública personalizable por tema visual.</p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check"></i> Arquitectura multi-tenant (BD aislada por empresa)</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Panel admin con FullCalendar (arrastrar y editar reservas)</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Franjas horarias en tiempo real (AJAX) + aforo</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Confirmación por email con enlace único y Google Calendar</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Roles (SuperAdmin / Admin / User) con Spatie Permission</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Sistema de demos y gestión de empresas (SuperAdmin)</div>
+            </div>
+            <div class="project-tech">
+              <span>Laravel 11</span><span>PHP 8.2</span><span>MySQL</span><span>Multi-tenant</span>
+              <span>FullCalendar</span><span>Bootstrap 5</span><span>jQuery</span><span>Vite</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foody — proyecto personal en desarrollo -->
+        <div class="project-card project-wip" data-category="personal" data-aos="fade-up" data-aos-delay="300">
+          <div class="wip-badge">
+            <i class="fas fa-hammer"></i> En desarrollo
+          </div>
+          <div class="project-img">
+            <div class="project-placeholder p-foody"><i class="fas fa-utensils"></i></div>
+            <div class="project-overlay">
+              <a href="https://lnkd.in/ebTihQKg" target="_blank" rel="noopener" class="project-link" title="Repositorio GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://lnkd.in/e9XyBDKi" target="_blank" rel="noopener" class="project-link" title="Ver en Vercel">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Mobile &middot; Personal &middot; Aprendizaje</span>
+            <h3>Foody — Gestor de Recetas</h3>
+            <p>App móvil para gestionar recetas, lista de la compra e inventario de nevera. Calcula automáticamente qué ingredientes faltan según lo que tienes en casa. Diseñada y optimizada 100% para móvil con React y Supabase.</p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check"></i> Autenticación completa (login / registro)</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Inventario inteligente con cálculo de cantidades</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Flujo carrito → nevera con un clic</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Subida de imágenes a Supabase Storage</div>
+              <div class="highlight-item"><i class="fas fa-check"></i> Row Level Security (RLS) y Custom Hooks</div>
+            </div>
+            <div class="project-tech">
+              <span>React</span><span>Vite</span><span>Supabase</span><span>RLS</span><span>Vercel</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA CV ─────────────────────────────────────────────── -->
+  <section class="cta-section" data-aos="fade-up">
+    <div class="cta-blob"></div>
+    <div class="container cta-content">
+      <h2>¿Te interesa mi perfil?</h2>
+      <p>Descarga mi CV completo para conocer más sobre mi experiencia y habilidades, o contáctame directamente.</p>
+      <div class="cta-actions">
+        <a href="curriculum_javi_dev.pdf" download class="btn-cv btn-cv-cta">
+          <i class="fas fa-file-arrow-down"></i> Descargar CV
+        </a>
+        <a href="#contacto" class="btn-outline">Contactar <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACTO ──────────────────────────────────────────── -->
+  <section class="section contacto" id="contacto">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">05. Contacto</span>
+        <h2>Hablemos</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <p>¿Tienes un proyecto en mente, necesitas automatizar procesos o quieres colaborar en algo? No dudes en escribirme.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:javisanchezlopezdev@gmail.com">javisanchezlopezdev@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:638354877">638 354 877</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-location-dot"></i>
+              <span>Córdoba, España &middot; Abierto a remoto</span>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/javier-s%C3%A1nchez-l%C3%B3pez-615687227/" target="_blank" rel="noopener">linkedin.com/in/javier-sánchez-lópez</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/JavierSA-dev" target="_blank" rel="noopener">github.com/JavierSA-dev</a>
+            </div>
+          </div>
+          <a href="curriculum_javi_dev.pdf" download class="btn-cv btn-cv-contact">
+            <i class="fas fa-download"></i> Descargar CV
+          </a>
+        </div>
+        <form class="contact-form" data-aos="fade-left" id="contactForm">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" placeholder="¿De qué se trata?" />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame más..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-submit">
+            <span>Enviar mensaje</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-circle-check"></i> Mensaje enviado. Te respondo pronto.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <a href="#hero" class="footer-logo">
+        <span class="logo-bracket">&lt;</span>JSL<span class="logo-bracket">/&gt;</span>
+      </a>
+      <p class="footer-copy">Diseñado y desarrollado por Javier Sánchez López &middot; 
+      <script>document.write(new Date().getFullYear())</script> &copy; Todos los derechos reservados.
+      </p>
+      <div class="footer-socials">
+        <a href="https://github.com/JavierSA-dev" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/javier-s%C3%A1nchez-l%C3%B3pez-615687227/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:javisanchezlopezdev@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- FAB Speed Dial -->
+  <div class="fab-container" id="fabContainer">
+    <div class="fab-options">
+      <a href="tel:638354877" class="fab-option" data-label="638 354 877">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/javier-s%C3%A1nchez-l%C3%B3pez-615687227/" target="_blank" rel="noopener" class="fab-option" data-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="curriculum_javi_dev.pdf" download class="fab-option" data-label="Descargar CV">
+        <i class="fas fa-file-arrow-down"></i>
+      </a>
+    </div>
+    <button class="fab-main" id="fabMain" aria-label="Contacto rápido">
+      <i class="fas fa-plus" id="fabIcon"></i>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="libs/aos/aos.min.js"></script>
+  <script src="libs/sweetalert2/sweetalert2.all.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
