@@ -79,7 +79,7 @@ function updateThemeIcon(theme) {
 /* ═══════════════════════════════════════════════
    TYPING EFFECT
 ═══════════════════════════════════════════════ */
-const words   = ['Full Stack', 'Laravel', 'PHP', 'Mobile'];
+const words   = ['Full Stack', 'NodeJS', 'PHP', 'Mobile'];
 const typingEl = document.getElementById('typing');
 let wordIndex  = 0;
 let charIndex  = 0;
@@ -111,7 +111,7 @@ function type() {
 type();
 
 /* ═══════════════════════════════════════════════
-   PROJECTS FILTER
+   FILTER PROYEK
 ═══════════════════════════════════════════════ */
 const originBtns   = document.querySelectorAll('.origin-btn');
 const projectCards = document.querySelectorAll('.project-card');
@@ -135,7 +135,7 @@ originBtns.forEach(btn => {
 });
 
 /* ═══════════════════════════════════════════════
-   CONTACT FORM
+   FORMULIR KONTAK
 ═══════════════════════════════════════════════ */
 const contactForm   = document.getElementById('contactForm');
 const formSuccess   = document.getElementById('formSuccess');
@@ -185,7 +185,7 @@ contactForm.addEventListener('submit', async (e) => {
 });
 
 /* ═══════════════════════════════════════════════
-   SMOOTH SCROLL FOR INTERNAL LINKS
+   GULIR HALUS UNTUK TAUTAN INTERNAL
 ═══════════════════════════════════════════════ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -198,7 +198,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /* ═══════════════════════════════════════════════
-   FAB SPEED DIAL
+   PENGATURAN KECEPATAN FAB
 ═══════════════════════════════════════════════ */
 const fabContainer = document.getElementById('fabContainer');
 const fabMain      = document.getElementById('fabMain');
@@ -214,7 +214,7 @@ document.addEventListener('click', e => {
 });
 
 /* ═══════════════════════════════════════════════
-   GITHUB CONTRIBUTIONS GRAPH
+   GRAFIK KONTRIBUSI GITHUB
 ═══════════════════════════════════════════════ */
 (async () => {
   const graphEl = document.getElementById('githubGraph');
@@ -238,7 +238,7 @@ document.addEventListener('click', e => {
   const weeks = [];
   for (let i = 0; i < days.length; i += 7) weeks.push(days.slice(i, i + 7));
 
-  // Etiquetas de meses
+  // Label bulan
   const monthsRow = document.createElement('div');
   monthsRow.className = 'github-months-row';
   let lastMonth = -1;
@@ -251,7 +251,7 @@ document.addEventListener('click', e => {
     monthsRow.appendChild(lbl);
   });
 
-  // Grid con etiquetas de días
+  // Kisi-kisi dengan label hari
   const graphBody = document.createElement('div');
   graphBody.className = 'github-body';
 
@@ -272,7 +272,7 @@ document.addEventListener('click', e => {
       const cell = document.createElement('div');
       cell.className = 'github-day';
       cell.setAttribute('data-level', day.level);
-      const fecha = new Date(day.date + 'T00:00:00').toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+      const fecha = new Date(day.date + 'T00:00:00').toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
       cell.setAttribute('data-bs-toggle', 'tooltip');
       cell.setAttribute('data-bs-placement', 'top');
       cell.setAttribute('title', `${day.count} contribución${day.count !== 1 ? 'es' : ''} · ${fecha}`);
@@ -284,14 +284,14 @@ document.addEventListener('click', e => {
   graphBody.appendChild(dayLabelsEl);
   graphBody.appendChild(grid);
 
-  // Inicializar tooltips Bootstrap tras renderizar
+  // Inisialisasi tooltip Bootstrap setelah rendering
   requestAnimationFrame(() => {
     graphEl.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
       new bootstrap.Tooltip(el, { trigger: 'hover' });
     });
   });
 
-  // Leyenda
+  // Legenda
   const legend = document.createElement('div');
   legend.className = 'github-legend';
   legend.innerHTML = `
@@ -309,7 +309,7 @@ document.addEventListener('click', e => {
 })();
 
 /* ═══════════════════════════════════════════════
-   CUSTOM CURSOR
+   KURSOR KUSTOM
 ═══════════════════════════════════════════════ */
 const cursorDot  = document.getElementById('cursor-dot');
 const cursorRing = document.getElementById('cursor-ring');
@@ -325,7 +325,7 @@ if (cursorRing && window.matchMedia('(pointer: fine)').matches) {
     cursorDot.style.top  = mouseY + 'px';
   });
 
-  // El anillo sigue con lag suave
+  // Cincinnya masih sedikit tertinggal
   (function animateRing() {
     ringX += (mouseX - ringX) * 0.12;
     ringY += (mouseY - ringY) * 0.12;
@@ -334,7 +334,7 @@ if (cursorRing && window.matchMedia('(pointer: fine)').matches) {
     requestAnimationFrame(animateRing);
   })();
 
-  // Efecto hover en interactivos
+  // Efek hover pada elemen interaktif
   const interactives = 'a, button, [role="button"], input, textarea, label';
   document.querySelectorAll(interactives).forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
