@@ -179,7 +179,7 @@ contactForm.addEventListener('submit', async (e) => {
   } catch {
     Swal.fire({ icon: 'error', title: 'Kesalahan pengiriman', text: 'Periksa koneksi internet Anda.', ...swalTheme() });
   } finally {
-    span.textContent = 'Enviar mensaje';
+    span.textContent = 'Kirim pesan';
     btn.disabled = false;
   }
 });
@@ -275,7 +275,7 @@ document.addEventListener('click', e => {
       const fecha = new Date(day.date + 'T00:00:00').toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
       cell.setAttribute('data-bs-toggle', 'tooltip');
       cell.setAttribute('data-bs-placement', 'top');
-      cell.setAttribute('title', `${day.count} contribución${day.count !== 1 ? 'es' : ''} · ${fecha}`);
+      cell.setAttribute('title', `${day.count} kontribusi · ${fecha}`);
       col.appendChild(cell);
     });
     grid.appendChild(col);
