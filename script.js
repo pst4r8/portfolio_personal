@@ -153,13 +153,13 @@ contactForm.addEventListener('submit', async (e) => {
   const emailOk  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
 
   if (!emailOk) {
-    Swal.fire({ icon: 'warning', title: 'Email inválido', text: 'Introduce una dirección de correo válida.', ...swalTheme() });
+    Swal.fire({ icon: 'warning', title: 'Alamat email tidak valid', text: 'Masukkan alamat email yang valid.', ...swalTheme() });
     return;
   }
 
   const btn  = contactForm.querySelector('.btn-submit');
   const span = btn.querySelector('span');
-  span.textContent = 'Enviando...';
+  span.textContent = 'Mengirim...';
   btn.disabled = true;
 
   try {
@@ -174,10 +174,10 @@ contactForm.addEventListener('submit', async (e) => {
       formSuccess.classList.add('show');
       setTimeout(() => formSuccess.classList.remove('show'), 5000);
     } else {
-      Swal.fire({ icon: 'error', title: 'Error al enviar', text: 'Ha ocurrido un error. Inténtalo de nuevo.', ...swalTheme() });
+      Swal.fire({ icon: 'error', title: 'Kesalahan pengiriman', text: 'Terjadi kesalahan. Silakan coba lagi.', ...swalTheme() });
     }
   } catch {
-    Swal.fire({ icon: 'error', title: 'Sin conexión', text: 'Comprueba tu conexión a internet.', ...swalTheme() });
+    Swal.fire({ icon: 'error', title: 'Kesalahan pengiriman', text: 'Periksa koneksi internet Anda.', ...swalTheme() });
   } finally {
     span.textContent = 'Enviar mensaje';
     btn.disabled = false;
@@ -221,15 +221,15 @@ document.addEventListener('click', e => {
   const totalEl = document.getElementById('githubTotal');
   if (!graphEl) return;
 
-  const MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-  const DAY_LABELS = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+	const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+	const DAY_LABELS = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
 
   const [contribRes] = await Promise.allSettled([
     fetch('https://github-contributions-api.jogruber.de/v4/JavierSA-dev?y=last')
   ]);
 
   if (contribRes.status !== 'fulfilled' || !contribRes.value.ok) {
-    graphEl.innerHTML = '<p class="github-loading">No se pudo cargar la actividad.</p>';
+    graphEl.innerHTML = '<p class="github-loading">Proses tidak dapat dimuat.</p>';
     return;
   }
 
@@ -295,9 +295,9 @@ document.addEventListener('click', e => {
   const legend = document.createElement('div');
   legend.className = 'github-legend';
   legend.innerHTML = `
-    <span>Menos</span>
+    <span>Lebih sedikit</span>
     ${[0,1,2,3,4].map(l => `<div class="github-day" data-level="${l}" style="flex-shrink:0"></div>`).join('')}
-    <span>Más</span>
+    <span>Lebih jauh</span>
   `;
 
   graphEl.innerHTML = '';
@@ -305,7 +305,7 @@ document.addEventListener('click', e => {
   graphEl.appendChild(graphBody);
 
   const total = Object.values(data.total).reduce((a, b) => a + b, 0);
-  totalEl.innerHTML = `<span>${total} contribuciones en el último año</span>${legend.outerHTML}`;
+  totalEl.innerHTML = `<span>${total} kontribusi dalam setahun terakhir</span>${legend.outerHTML}`;
 })();
 
 /* ═══════════════════════════════════════════════

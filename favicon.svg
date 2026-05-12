@@ -1,5 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0a0a0f"/>
-  <text x="50%" y="38%" font-family="monospace" font-size="11" font-weight="900" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">&lt;JSL</text>
-  <text x="50%" y="65%" font-family="monospace" font-size="11" font-weight="900" fill="#4ade80" text-anchor="middle" dominant-baseline="middle">/&gt;</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">ZUFAR AL favicon</title>
+  <desc id="desc">Neon purple and blue ZA monogram with bot eyes for ZUFAR AL developer portfolio.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#24103f"/>
+      <stop offset="48%" stop-color="#0e1025"/>
+      <stop offset="100%" stop-color="#05060d"/>
+    </radialGradient>
+    <linearGradient id="neon" x1="68" y1="80" x2="444" y2="432" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff4dff"/>
+      <stop offset="48%" stop-color="#9b5cff"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="120" y1="120" x2="380" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f3e8ff"/>
+      <stop offset="35%" stop-color="#9b5cff"/>
+      <stop offset="70%" stop-color="#38235f"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.55  0 1 0 0 0.12  0 0 1 0 1  0 0 0 0.85 0" result="purpleGlow"/>
+      <feMerge>
+        <feMergeNode in="purpleGlow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="round">
+      <rect x="24" y="24" width="464" height="464" rx="110"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="512" height="512" fill="url(#bg)"/>
+    <circle cx="256" cy="256" r="195" fill="none" stroke="#7c3cff" stroke-width="4" opacity="0.35"/>
+    <circle cx="256" cy="256" r="158" fill="none" stroke="#00d4ff" stroke-width="3" opacity="0.22" stroke-dasharray="18 18"/>
+    <path d="M42 352h90m248 0h90M72 145h72m224 0h72M404 68v60M108 384v58" stroke="#7c3cff" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+    <circle cx="94" cy="98" r="5" fill="#b84dff" opacity="0.8"/>
+    <circle cx="429" cy="394" r="6" fill="#00d4ff" opacity="0.65"/>
+    <circle cx="392" cy="92" r="3" fill="#ffffff" opacity="0.45"/>
+  </g>
+
+  <rect x="24" y="24" width="464" height="464" rx="110" fill="none" stroke="url(#neon)" stroke-width="10" opacity="0.9" filter="url(#softGlow)"/>
+
+  <!-- bot head -->
+  <g filter="url(#glow)">
+    <path d="M185 143c0-36 30-64 71-64s71 28 71 64v10h-28v-10c0-20-17-35-43-35s-43 15-43 35v10h-28v-10z" fill="#f2e8ff" opacity="0.9"/>
+    <circle cx="256" cy="71" r="18" fill="url(#neon)"/>
+    <rect x="162" y="134" width="188" height="103" rx="48" fill="#090a16" stroke="url(#neon)" stroke-width="8"/>
+    <rect x="194" y="172" width="50" height="18" rx="9" fill="#f3e8ff"/>
+    <rect x="268" y="172" width="50" height="18" rx="9" fill="#f3e8ff"/>
+  </g>
+
+  <!-- ZA monogram -->
+  <g filter="url(#glow)" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M122 272h234L171 425h225" fill="none" stroke="url(#metal)" stroke-width="48"/>
+    <path d="M285 421l57-149 57 149M313 360h58" fill="none" stroke="url(#neon)" stroke-width="42"/>
+    <path d="M122 272h234L171 425h225" fill="none" stroke="#ffffff" stroke-width="8" opacity="0.5"/>
+    <path d="M285 421l57-149 57 149M313 360h58" fill="none" stroke="#ffffff" stroke-width="7" opacity="0.45"/>
+  </g>
 </svg>
